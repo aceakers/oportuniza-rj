@@ -46,7 +46,6 @@ O fluxo de candidatura permite registrar uma solicitação e acompanhar sua situ
 | **JavaScript** | Lógica e interatividade da aplicação | 
 | **CSS3** | Estilização e adaptação para diferentes telas | 
 | **Supabase** | Banco de dados, autenticação e controle de acesso | 
-| **PostgreSQL** | Armazenamento estruturado das oportunidades e candidaturas | 
 | **Git e GitHub** | Versionamento e hospedagem do código-fonte | 
 | **GitHub Pages** | Publicação gratuita da aplicação estática | 
 
