@@ -1,4 +1,3 @@
-
 name: Publicar Oportuniza RJ no GitHub Pages
 
 on:
@@ -20,7 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Baixar o código
+      - name: Baixar o codigo
         uses: actions/checkout@v4
 
       - name: Configurar Node.js
@@ -29,13 +28,16 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Instalar dependências
+      - name: Instalar dependencias
         run: npm ci
 
       - name: Compilar o projeto
         run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
 
-      - name: Preparar publicação
+      - name: Preparar publicacao
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
@@ -50,12 +52,3 @@ jobs:
       - name: Publicar no GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
-      - name: Compilar o projeto
-        run: npm run build
-        env:
-          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
-
-
-        
